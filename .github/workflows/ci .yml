@@ -28,9 +28,9 @@ jobs:
           CI: true
       - name: Upload Test Coverage
         uses: actions/upload-artifact@v3
-          with:
-            name: code-coverage
-            path: coverage
+        with:
+          name: code-coverage
+          path: coverage
       - name: Build Project
         if: github.event_name == 'push'
         run: npm run build
