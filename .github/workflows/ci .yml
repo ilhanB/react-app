@@ -37,8 +37,8 @@ jobs:
       - name: Upload Build Folder
         uses: actions/upload-artifact@v3
         with:
-            name: build
-            path: build
+          name: build
+          path: build
       - name: Deploy to staging
         if: github.event_name == 'push'
         run: npx surge --project ./build --domain huge-clouds.surge.sh
