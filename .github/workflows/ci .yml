@@ -54,13 +54,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy to staging
-        if: github.event_name == 'push' && github.ref == 'refs/head/develop'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/develop'
         run: npx surge --project ./build --domain huge-clouds.surge.sh
       - name: Deploy to Production
-        if: github.event_name == 'push' && github.ref == 'refs/head/main'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npx surge --project ./build --domain real-sheep.surge.sh
       - name: Upload Coverage Reports
-        if: github.event_name == 'push' && github.ref == 'refs/head/main'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: npx codecov
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
