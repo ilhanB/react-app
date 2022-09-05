@@ -3,7 +3,7 @@ author: ilhan
 description: Some description 
 inputs:
   who-to-greet:
-    description: "Who to great"
+    description: "Who to greet"
     required: true
     default: ilhan 
 outputs:
@@ -14,4 +14,4 @@ runs:
   image: "Dockerfile"
   # entrypoint:
   args:  
-    - ${{ input.who-to-great }}
+    - ${{ input.who-to-greet }}
